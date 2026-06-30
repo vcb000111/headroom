@@ -5,6 +5,7 @@ ARG PYTHON_SITE_PACKAGES=/usr/local/lib/python${PYTHON_VERSION}/site-packages
 
 # ---- Build stage: compile native extensions, build wheel ----
 FROM python:${PYTHON_VERSION}-slim AS builder
+ENV RUSTFLAGS="-C target-cpu=generic"
 
 ARG UV_VERSION
 
